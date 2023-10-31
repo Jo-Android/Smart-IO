@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.hgtech.smartio.ui.fragment.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_navigation_home_to_assignCropSensorResultFragment"
+            app:destination="@id/assignCropSensorResultFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.hgtech.smartio.ui.fragment.DashboardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard">
+        <action
+            android:id="@+id/action_navigation_dashboard_to_cropListFragment"
+            app:destination="@id/cropListFragment" />
+        <action
+            android:id="@+id/action_navigation_dashboard_to_listCropBySensorFragment"
+            app:destination="@id/listCropBySensorFragment" />
+        <action
+            android:id="@+id/action_navigation_dashboard_to_addSensorFragment"
+            app:destination="@id/addSensorFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.hgtech.smartio.ui.fragment.SettingsFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_navigation_settings_to_userFragment"
+            app:destination="@id/userFragment" />
+        <action
+            android:id="@+id/action_navigation_settings_to_addSensorFragment"
+            app:destination="@id/addSensorFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="com.hgtech.smartio.ui.fragment.user.UserFragment"
+        android:label="fragment_user"
+        tools:layout="@layout/fragment_user">
+        <action
+            android:id="@+id/action_userFragment_to_userEditEmailFragment"
+            app:destination="@id/userEditEmailFragment" />
+        <action
+            android:id="@+id/action_userFragment_to_userEditPasswordFragment"
+            app:destination="@id/userEditPasswordFragment" />
+        <action
+            android:id="@+id/action_userFragment_to_manageUserFragment"
+            app:destination="@id/manageUserFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/userEditEmailFragment"
+        tools:layout="@layout/layout_user_bottom_dialog"
+        android:name="com.hgtech.smartio.ui.fragment.user.dialog.UserEditEmailFragment"
+        android:label="UserEditEmailFragment">
+        <argument
+            android:name="oldEmail"
+            app:argType="string"
+            android:defaultValue='""' />
+    </dialog>
+    <dialog
+        android:id="@+id/userEditPasswordFragment"
+        android:name="com.hgtech.smartio.ui.fragment.user.dialog.UserEditPasswordFragment"
+        tools:layout="@layout/layout_user_bottom_dialog"
+        android:label="UserEditPasswordFragment">
+        <argument
+            android:name="oldEmail"
+            app:argType="string"
+            android:defaultValue='""' />
+    </dialog>
+    <fragment
+        android:id="@+id/manageUserFragment"
+        android:name="com.hgtech.smartio.ui.fragment.user.ManageUserFragment"
+        android:label="fragment_manage_user"
+        tools:layout="@layout/fragment_manage_user">
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_manageUserFragment_to_regularUserFragment"
+            app:destination="@id/regularUserFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/regularUserFragment"
+        android:name="com.hgtech.smartio.ui.fragment.user.RegularUserFragment"
+        android:label="fragment_regular_user"
+        tools:layout="@layout/fragment_regular_user" />
+    <dialog
+        android:id="@+id/addCropFragment"
+        android:name="com.hgtech.smartio.ui.fragment.crop.AddCropFragment"
+        android:label="fragment_add_crop"
+        tools:layout="@layout/fragment_add_crop" />
+
+    <dialog
+        android:id="@+id/addSensorFragment"
+        android:name="com.hgtech.smartio.ui.fragment.sensor.AddSensorFragment"
+        android:label="fragment_add_sensor"
+        tools:layout="@layout/fragment_add_sensor">
+        <argument
+            android:name="qr"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </dialog>
+    <dialog
+        android:id="@+id/assignSensorUserFragment"
+        android:name="com.hgtech.smartio.ui.fragment.sensor.AssignSensorUserFragment"
+        android:label="fragment_assign_sensor_user"
+        tools:layout="@layout/fragment_assign_sensor_user">
+        <argument
+            android:name="userID"
+            app:argType="string" />
+        <argument
+            android:name="isManager"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </dialog>
+
+    <fragment
+        android:id="@+id/assignCropSensorResultFragment"
+        android:name="com.hgtech.smartio.ui.fragment.assign.crop_sensor.AssignCropSensorResultFragment"
+        android:label="fragment_assign_crop_sensor_result"
+        tools:layout="@layout/fragment_assign_crop_sensor_result">
+        <argument
+            android:name="assignId"
+            app:argType="string" />
+        <argument
+            android:name="isManager"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/cropListFragment"
+        android:name="com.hgtech.smartio.ui.fragment.crop.CropListFragment"
+        android:label="fragment_crop_list"
+        tools:layout="@layout/fragment_crop_list">
+        <action
+            android:id="@+id/action_cropListFragment_to_addCropFragment"
+            app:destination="@id/addCropFragment" />
+        <action
+            android:id="@+id/action_cropListFragment_to_cropDetailFragment"
+            app:destination="@id/cropDetailFragment" />
+        <argument
+            android:name="isManager"
+            app:argType="boolean" />
+        <argument
+            android:name="isNavigationCropDetail"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <action
+            android:id="@+id/action_cropListFragment_to_assignCropSensorFragment"
+            app:destination="@id/assignCropSensorFragment" />
+        <argument
+            android:name="sensorId"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/cropDetailFragment"
+        android:name="com.hgtech.smartio.ui.fragment.assign.CropDetailFragment"
+        android:label="fragment_crop_detail"
+        tools:layout="@layout/fragment_crop_detail">
+        <argument
+            android:name="crop"
+            app:argType="com.hgtech.smartio.network.model.response.crop.Crop" />
+        <action
+            android:id="@+id/action_cropDetailFragment_to_assignCropSensorFragment"
+            app:destination="@id/assignCropSensorFragment" />
+        <action
+            android:id="@+id/action_cropDetailFragment_to_assignCropSensorResultFragment"
+            app:destination="@id/assignCropSensorResultFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/assignCropSensorFragment"
+        android:name="com.hgtech.smartio.ui.fragment.assign.crop_sensor.AssignCropSensorFragment"
+        android:label="fragment_assign_crop_sensor"
+        tools:layout="@layout/fragment_assign_crop_sensor">
+        <action
+            android:id="@+id/action_assignCropSensorFragment_to_assignCropSensorResultFragment"
+            app:destination="@id/assignCropSensorResultFragment"
+            app:popUpTo="@+id/cropDetailFragment" />
+        <argument
+            android:name="crop"
+            app:argType="com.hgtech.smartio.network.model.response.crop.Crop" />
+        <argument
+            android:name="isManager"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_assignCropSensorFragment_to_addSensorFragment"
+            app:destination="@id/addSensorFragment" />
+        <argument
+            android:name="sensor"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </dialog>
+    <fragment
+        android:id="@+id/listCropBySensorFragment"
+        android:name="com.hgtech.smartio.ui.fragment.assign.crop_sensor.ListCropBySensorFragment"
+        android:label="fragment_list_crop_by_sensor"
+        tools:layout="@layout/fragment_list_crop_by_sensor">
+        <argument
+            android:name="sensorId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_listCropBySensorFragment_to_assignCropSensorResultFragment"
+            app:destination="@id/assignCropSensorResultFragment" />
+        <action
+            android:id="@+id/action_listCropBySensorFragment_to_listCropBySensorTypeFragment"
+            app:destination="@id/listCropBySensorTypeFragment" />
+        <argument
+            android:name="isManager"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/listCropBySensorTypeFragment"
+        android:name="com.hgtech.smartio.ui.fragment.assign.crop_sensor.ListCropBySensorTypeFragment"
+        android:label="fragment_list_crop_by_sensor_type"
+        tools:layout="@layout/fragment_list_crop_by_sensor_type">
+
+        <action
+            android:id="@+id/action_listCropBySensorTypeFragment_to_assignCropSensorFragment"
+            app:destination="@id/assignCropSensorFragment" />
+        <argument
+            android:name="sensorId"
+            app:argType="string" />
+        <argument
+            android:name="isManager"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_listCropBySensorTypeFragment_to_cropListFragment"
+            app:destination="@id/cropListFragment" />
+    </fragment>
+</navigation>

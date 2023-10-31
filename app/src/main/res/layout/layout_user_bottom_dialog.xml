@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="30dp">
+
+    <include
+        android:id="@+id/topBar"
+        layout="@layout/layout_top_bar_dialog" />
+
+    <include
+        android:id="@+id/firstLL"
+        layout="@layout/layout_text_with_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_marginTop="20dp" />
+
+    <include
+        android:id="@+id/secondLL"
+        layout="@layout/layout_text_with_hint"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp" />
+
+    <include
+        android:id="@+id/thirdLL"
+        layout="@layout/layout_text_with_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp" />
+
+    <Button
+        android:id="@+id/update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#056868"
+        android:letterSpacing="0.06"
+        android:text="@string/update"
+        android:textColor="@color/text_color" />
+</LinearLayout>

@@ -1,0 +1,74 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.SmartIO" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/color_primary</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="ButtonMenuText" parent="UserList">
+        <item name="android:padding">10dp</item>
+        <item name="android:drawablePadding">20dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Button">
+        <item name="backgroundTint">@color/action_button</item>
+        <item name="android:letterSpacing">0.06</item>
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+
+    <style name="Title" parent="UserList">
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TitleChild" parent="UserList">
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="UserList">
+        <item name="fontFamily">@font/century_gothic</item>
+        <item name="android:letterSpacing">0.06</item>
+        <item name="android:lineSpacingExtra">5dp</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="ItemList" parent="UserList">
+        <item name="android:textSize">14sp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="ItemListTitle" parent="ItemList">
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/arial_black</item>
+    </style>
+
+    <style name="Scrolling">
+        <item name="android:scrollbars">vertical</item>
+        <item name="android:fadeScrollbars">false</item>
+        <item name="android:scrollbarStyle">outsideOverlay</item>
+        <item name="android:scrollbarThumbVertical">@drawable/scroll_style</item>
+        <item name="android:scrollbarAlwaysDrawVerticalTrack">true</item>
+        <item name="android:scrollbarSize">5dp</item>
+    </style>
+
+    <style name="DialogSlide1">
+        <item name="android:windowEnterAnimation">@anim/dialog_slide_left</item>
+        <item name="android:windowExitAnimation">@anim/dialog_slide_right</item>
+    </style>
+</resources>

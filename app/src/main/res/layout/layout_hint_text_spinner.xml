@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/baclground_gray_rounded"
+    android:layout_margin="20dp"
+    android:padding="16dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/hintText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:fontFamily="@font/century_gothic"
+        android:textColor="@color/hint_color"
+        android:textSize="15sp" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/contentText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:imeOptions="actionDone"
+        android:background="@null"
+        android:fontFamily="@font/century_gothic"
+        android:textColor="@color/text_color"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        android:singleLine="true" />
+</LinearLayout>
